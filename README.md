@@ -22,7 +22,7 @@ This project demonstrates how **Vela Pulsar's γ-ray signals** can be used as **
 
 ## 🛠 Methods
 
-**Data Loading & Preprocessing** (`01_data_loading.ipynb`, `02_preprocessing.ipynb`)  
+- **Data Loading & Preprocessing** (`01_data_loading.ipynb`, `02_preprocessing.ipynb`)  
 - **Period Detection with Lomb–Scargle** (`03_period_detection.ipynb`)  
 - **Folded Pulse Profiles** (`04_epoch_folding.ipynb`)  
 - **XNAV Phase Shift Demo** (`05_xnav_demo.ipynb`) 
@@ -80,6 +80,4 @@ This project demonstrates how **Vela Pulsar's γ-ray signals** can be used as **
 4. Execute cells in order (`01 → 05`)  
 
 ## 📝 License
-MIT License
-
 MIT License
