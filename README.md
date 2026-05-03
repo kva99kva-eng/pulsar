@@ -1,83 +1,118 @@
-# 🌟 Vela Pulsar Analysis for XNAV Demonstration
+﻿# Pulsar Navigation Project
 
-**Author:** Victoria Kupina  
-**Role:** Data Analyst / Junior Data Scientist  
+Pet project on pulsar signal analysis and X-ray pulsar navigation concepts.
 
-## 🚀 Problem Statement
+The project demonstrates how photon arrival-time data can be processed to detect a pulsar period, build a folded pulse profile, and show how phase shifts may be used in navigation-related timing tasks.
 
-Pulsars are rapidly rotating neutron stars emitting **periodic signals**, acting as cosmic lighthouses.  
-This project demonstrates how **Vela Pulsar's γ-ray signals** can be used as **timing references** for ultra-precise **space navigation (XNAV)**.  
+## Goal
 
-**Objectives:**
-- Analyze photon arrival times and energies  
-- Detect the dominant pulsation period  
-- Build folded pulse profiles  
-- Demonstrate phase shifts and timing errors affecting navigation  
+The goal of this project is to build a clear and reproducible pipeline for basic pulsar timing analysis:
 
-## 📊 Data Source
+- load and inspect photon arrival-time data;
+- perform exploratory data analysis;
+- preprocess the signal;
+- detect the pulsation period;
+- build an epoch-folded pulse profile;
+- demonstrate the idea of timing-based navigation using phase shifts.
 
-- [Fermi LAT Photon Events for Vela Pulsar](https://fermi.gsfc.nasa.gov/cgi-bin/ssc/LAT/QueryResults.cgi?id=L2601141734299D7B0BD279)  
-- **Raw format:** FITS  
-- **Preprocessed:** filtered by energy > 100 MeV  
+## Why This Project Matters
 
-## 🛠 Methods
+Pulsars are highly stable astrophysical sources. Because their pulse profiles repeat with very precise periods, they can be used as natural space navigation beacons.
 
-- **Data Loading & Preprocessing** (`01_data_loading.ipynb`, `02_preprocessing.ipynb`)  
-- **Period Detection with Lomb–Scargle** (`03_period_detection.ipynb`)  
-- **Folded Pulse Profiles** (`04_epoch_folding.ipynb`)  
-- **XNAV Phase Shift Demo** (`05_xnav_demo.ipynb`) 
+This project is not a production-grade navigation system. It is an educational research-style project that shows the core logic behind pulsar timing analysis and its connection to X-ray navigation.
 
-## 📈 Visuals
+## Project Structure
 
-### Photon Arrival Times
-![Arrival Times](images/hist_arrival_times.png)
+~~~text
+pulsar/
+├── notebooks/
+│   ├── 01_data_loading.ipynb
+│   ├── 02_exploratory_analysis.ipynb
+│   ├── 03_preprocessing.ipynb
+│   ├── 04_period_detection.ipynb
+│   ├── 05_epoch_folding.ipynb
+│   └── 06_xnav_demo.ipynb
+├── .gitignore
+├── LICENSE
+├── requirements.txt
+└── README.md
+~~~
 
-### Energy Distribution
-![Energy Distribution](images/hist_energy.png)
-
-### Energy Distribution After Filtering
-![Filtered Energy](images/hist_energy_filtered.png)
-
-### Lomb–Scargle Periodogram
-![Lomb–Scargle](images/lomb_scargle.png)
-
-### Folded Pulse Profile (50 bins)
-![Folded 50 bins](images/folded_profile_50bins.png)
-
-### Folded Pulse Profile - Different Binnings
-![Different Binnings](images/folded_profile_bins.png)
-
-### XNAV Phase Shift Demo
-![XNAV Demo](images/xnav_shift.png)
-
-**Numbers:**
-- Dominant period ≈ 0.0893 s  
-- Filtered photons: 278,459 events  
-- Phase shift 2% → ~1.78 ms time delay  
-- Period error δP = 1e-4 s over 1000 s → ~1.0 ms timing error  
-
-## 🌌 Business / Engineering Relevance
-
-- Pulsar-based timing enables **autonomous spacecraft navigation**  
-- Real-world example of **time-series analysis in astrophysics**  
-- Demonstrates **data analyst skills**: cleaning, period detection, visualization, reproducible pipelines  
-
-## 📂 Notebooks
+## Notebooks
 
 | Notebook | Description |
-|----------|-------------|
-| `01_data_loading.ipynb` | Load Fermi LAT photon data, initial inspection |
-| `02_preprocessing.ipynb` | Filter photons by energy, reduce background noise |
-| `03_period_detection.ipynb` | Lomb–Scargle periodogram, dominant frequency detection |
-| `04_epoch_folding.ipynb` | Folded pulse profile, comparison of different binning |
-| `05_xnav_demo.ipynb` | Phase shift → time delay, XNAV demonstration |
+|---|---|
+| 01_data_loading.ipynb | Load pulsar photon data and inspect the raw dataset |
+| 02_exploratory_analysis.ipynb | Explore photon arrival times, energy distribution and basic signal properties |
+| 03_preprocessing.ipynb | Filter and prepare the data for period detection |
+| 04_period_detection.ipynb | Apply period-search methods to detect the dominant pulsation period |
+| 05_epoch_folding.ipynb | Build a folded pulse profile from photon arrival times |
+| 06_xnav_demo.ipynb | Demonstrate how pulse phase shifts relate to timing and navigation concepts |
 
-## ⚡ How to Run
+## Methods Used
 
-1. Clone this repository  
-2. Install Python ≥ 3.10, packages: `numpy`, `pandas`, `matplotlib`, `astropy`, `psrqpy`  
-3. Open notebooks in **JupyterLab / Jupyter Notebook**  
-4. Execute cells in order (`01 → 05`)  
+- photon arrival-time analysis;
+- exploratory data analysis;
+- signal preprocessing;
+- period detection;
+- epoch folding;
+- pulse profile visualization;
+- simplified XNAV timing demonstration.
 
-## 📝 License
-MIT License
+## Tech Stack
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- SciPy
+- Astropy
+- Jupyter Notebook
+
+## How to Run
+
+Clone the repository:
+
+~~~bash
+git clone https://github.com/kva99kva-eng/pulsar.git
+cd pulsar
+~~~
+
+Create and activate a virtual environment:
+
+~~~bash
+python -m venv .venv
+.venv\Scripts\activate
+~~~
+
+Install dependencies:
+
+~~~bash
+pip install -r requirements.txt
+~~~
+
+Run Jupyter Lab:
+
+~~~bash
+jupyter lab
+~~~
+
+Then run the notebooks in order from 01 to 06.
+
+## Results
+
+The project shows a complete basic workflow for pulsar timing analysis:
+
+- photon data is loaded and inspected;
+- the signal is explored and preprocessed;
+- the pulsation period is detected;
+- a folded pulse profile is built;
+- a simplified XNAV demonstration connects timing shifts with navigation logic.
+
+## Limitations
+
+This is a learning-oriented project. It does not include full spacecraft dynamics, relativistic corrections, onboard sensor fusion, or a production-grade navigation filter.
+
+## License
+
+This project is licensed under the MIT License.
