@@ -75,6 +75,17 @@ Key result:
 
 `Dominant period ≈ 0.0893 s`
 
+## Visual Results
+
+### Folded Pulse Profile
+
+![Folded Pulse Profile](notebooks/images/folded_pulse_profile.png)
+
+### XNAV Phase Shift Demonstration
+
+![XNAV Phase Shift Demonstration](notebooks/images/xnav_phase_shift_demo.png)
+
+
 ## Tech Stack
 
 - Python
