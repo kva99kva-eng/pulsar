@@ -55,22 +55,35 @@ Additional details are provided in `data/README.md`.
 | Notebook | Description |
 |---|---|
 | `01_data_loading.ipynb` | Load FITS photon event data and inspect the dataset |
-| `02_exploratory_analysis.ipynb` | Explore photon arrival times, energy distribution and signal properties |
-| `03_preprocessing.ipynb` | Filter photon events and prepare the data for period detection |
-| `04_period_detection.ipynb` | Detect the dominant pulsation period |
-| `05_epoch_folding.ipynb` | Build folded pulse profiles using the detected period |
-| `06_xnav_demo.ipynb` | Demonstrate phase shifts, timing errors and XNAV logic |
+| `02_exploratory_analysis.ipynb` | Explore photon arrival times, energy distribution and inter-arrival times |
+| `03_preprocessing.ipynb` | Convert FITS data to a clean tabular format, create relative time values and apply energy filtering |
+| `04_period_detection.ipynb` | Detect the dominant pulsation period using epoch folding |
+| `05_epoch_folding.ipynb` | Build a folded pulse profile using the detected pulsation period |
+| `06_xnav_demo.ipynb` | Demonstrate phase shifts, timing errors and simplified XNAV logic |
 
 ## Results
 
-The project demonstrates a complete basic workflow for pulsar timing analysis:
+The project produces the following visual outputs:
 
-- Photon event data is loaded and inspected.
-- Low-energy events are filtered to reduce background noise.
-- The dominant pulsation period is detected.
-- Folded pulse profiles are built for different binning strategies.
-- Timing and phase-shift examples are connected to the concept of X-ray pulsar navigation.
+- `notebooks/images/04_period_detection.png` — epoch-folding period search result;
+- `notebooks/images/05_folded_pulse_profile.png` — folded pulse profile;
+- `notebooks/images/06_xnav_phase_shift_demo.png` — simulated XNAV phase shift demonstration;
+- `notebooks/images/06_phase_shift_to_range_error.png` — phase shift to approximate range error relationship.
 
+## Limitations
+
+This project uses a simplified educational workflow.
+
+It does not include:
+
+- barycentric corrections;
+- relativistic corrections;
+- full spacecraft orbit determination;
+- uncertainty estimation;
+- multi-pulsar navigation;
+- sensor fusion.
+
+The XNAV section should be interpreted as a conceptual demonstration rather than a real navigation system.
 Key result:
 
 `Dominant period ≈ 0.0893 s`
