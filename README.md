@@ -45,8 +45,7 @@ Additional details are provided in `data/README.md`.
 - Photon arrival-time analysis
 - Exploratory data analysis
 - Signal preprocessing
-- Lomb-Scargle period detection
-- Epoch folding
+- Epoch-folding period detection
 - Pulse profile visualization
 - Simplified XNAV timing demonstration
 
@@ -139,10 +138,6 @@ Run Jupyter Lab:
 `jupyter lab`
 
 Then run the notebooks in order from `01` to `06`.
-
-## Limitations
-
-This is a learning-oriented project. It does not include full spacecraft dynamics, relativistic corrections, onboard sensor fusion, or a production-grade navigation filter.
 
 ## License
 
