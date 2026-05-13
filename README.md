@@ -140,17 +140,39 @@ The project also produces visual outputs for:
 
 ---
 
-## Visual results
+## Visual Results
 
-Generated outputs:
+The project produces several visual artifacts that summarize the main analytical steps: period detection, pulse-profile reconstruction and simplified XNAV timing interpretation.
 
-```text
-notebooks/images/04_period_detection.png
-notebooks/images/05_folded_pulse_profile.png
-notebooks/images/06_xnav_phase_shift_demo.png
-notebooks/images/06_phase_shift_to_range_error.png
-```
+### 1. Period detection
 
+The epoch-folding search identifies the strongest candidate pulsation period in the photon arrival-time data.
+
+![Epoch-folding period detection](notebooks/images/04_period_detection.png)
+
+---
+
+### 2. Folded pulse profile
+
+Photon events are folded by phase using the detected period to reconstruct the pulsar pulse profile.
+
+![Folded pulse profile](notebooks/images/05_folded_pulse_profile.png)
+
+---
+
+### 3. XNAV phase-shift demonstration
+
+A simplified XNAV-style example showing how a phase shift can be interpreted as a timing offset.
+
+![XNAV phase shift demonstration](notebooks/images/06_xnav_phase_shift_demo.png)
+
+---
+
+### 4. Phase shift to range error
+
+A conceptual visualization of how timing error can be translated into approximate range error.
+
+![Phase shift to range error](notebooks/images/06_phase_shift_to_range_error.png)
 ---
 
 ## Why this project is relevant
